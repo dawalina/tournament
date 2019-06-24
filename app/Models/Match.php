@@ -1,11 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model
 {
+
+    protected $table = 'match';
+
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
