@@ -20,10 +20,8 @@ class CreateMatchTable extends Migration
             $table->timestamp('match_date');
             $table->integer('team1_score')->nullable();
             $table->integer('team2_score')->nullable();
-            $table->bigInteger('round_id')->unsigned()->nullable(false);
             $table->foreign('team1')->references('id')->on('team');
             $table->foreign('team2')->references('id')->on('team');
-            $table->foreign('round_id')->references('id')->on('round');
         });
     }
 

@@ -17,6 +17,14 @@ class Match extends Model
      * @var array
      */
     protected $fillable = [
-        'team1', 'team2', 'match_date', 'team1_score', 'team2_score', 'round_id'
+        'team1', 'team2', 'match_date', 'team1_score', 'team2_score'
     ];
+
+    public function getTeam1Name() {
+        return Team::query()->where('id', '=', $this->team1)->first()->name;
+    }
+
+    public function getTeam2Name() {
+        return Team::query()->where('id', '=', $this->team2)->first()->name;
+    }
 }
